@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChampDivisie Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="team-select-section">
+    <h1>Select Your Team</h1>
+    <select id="team-selector">
+      <option>FC Ryan</option>
+      <option>Rotterdam Rebels</option>
+      <option>FC JJ</option>
+      <option>ChampDivisie XI</option>
+      <option>Den Haag United</option>
+      <option>Ajax Reserve</option>
+      <option>Oranje FC</option>
+      <option>Eindhoven Stars</option>
+      <option>Amsterdam Warriors</option>
+      <option>Rotterdam Lions</option>
+      <option>AFC Ajax</option>
+      <option>Manchester United</option>
+      <option>Bayern München</option>
+      <option>Liverpool</option>
+    </select>
+    <button id="start-btn">Start Game</button>
+  </div>
+
+  <div id="game-section" style="display: none;">
+    <h2 id="team-name"></h2>
+    <p>Budget: $<span id="budget">0</span></p>
+    <p>Next Opponent: <span id="next-opponent"></span></p>
+    <button id="simulate-btn">Simulate Matchday</button>
+    <button id="training-btn">Training</button>
+    <button id="market-btn">Transfer Market</button>
+    <button id="packs-btn">Packs</button>
+    <button id="save-btn">💾 Save</button>
+    <button id="load-btn">📂 Load</button>
+    <button id="reset-btn">🔄 Reset</button>
+
+    <div id="match-sim">
+      <canvas id="match-canvas" width="400" height="200"></canvas>
+      <p id="result"></p>
+      <p id="commentary"></p>
+    </div>
+
+    <h3>Squad</h3>
+    <ul id="squad-list"></ul>
+
+    <h3>League Table</h3>
+    <table id="league-table">
+      <thead>
+        <tr>
+          <th>Team</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>Pts</th><th>Avg Rating</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="training-section" style="display: none;">
+    <h2>Training</h2>
+    <ul id="training-list"></ul>
+    <p style="color: red;">Training a player costs $500,000</p>
+    <button onclick="goBack()">← Back</button>
+  </div>
+
+  <div id="market-section" style="display: none;">
+    <h2>Transfer Market</h2>
+    <ul id="transfer-market"></ul>
+    <button onclick="goBack()">← Back</button>
+  </div>
+
+  <div id="packs-section" style="display: none;">
+    <h2>Packs</h2>
+    <button onclick="openPack('standard')">Open Standard Pack ($500k)</button>
+    <button onclick="openPack('special')">Open Special Pack ($1M)</button>
+    <p id="pack-result"></p>
+    <button onclick="goBack()">← Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
